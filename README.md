@@ -19,7 +19,7 @@ nxtv --path /home/user/repo --sourceBranch feature/foo --targetBranch main
 Por example: 
 Imagine the next repository:
 
-![img.png](img.png)
+![img.png](docs/img.png)
 
 They have two branches:
 - main: With two tags: 0.0.1 and 0.0.2
@@ -27,7 +27,7 @@ They have two branches:
 
 The commit with message "feat: X" indicates that the upgrade must be a feature (minor) upgrade.
 
-Then the output of the command is:
+Then the version is (0.1.0) and the output of the command is:
 
 ```json
 {
