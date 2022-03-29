@@ -67,7 +67,7 @@ func GetNextVersionBasedOnMR(path, sourceBranch, targetBranch string) (*Output, 
 	}
 	versionUpgradeType, relevantCommit := getUpgradeTypeAndRelevantCommitFromDiff(diffCommits)
 	if relevantCommit == "" {
-		relevantCommit = diffCommits[0].Message
+		relevantCommit = strings.TrimSpace(diffCommits[0].Message)
 	}
 	latestVersion := tags.Latest.String()
 	nextVersion := increaseVersion(latestVersion, versionUpgradeType)
@@ -84,7 +84,7 @@ func getUpgradeTypeAndRelevantCommitFromDiff(diffCommits []gitutils.Commit) (Ver
 	var versionUpgradeType = PatchVersionUpgrade
 	var relevantCommit string
 	for _, c := range diffCommits {
-		msg := strings.TrimRight(c.Message, "\n")
+		msg := strings.TrimSpace(c.Message)
 		m, err := parser.NewMachine().Parse([]byte(msg))
 		if err == nil {
 			cc, ok := m.(*conventionalcommits.ConventionalCommit)

@@ -41,3 +41,4 @@ Then the version is (0.1.0) and the output of the command is:
   "nextVersion": "0.1.0"
 }
 ```
+nxtv --path /Users/hloliveros/GolandProjects/urth/services/account --sourceBranch "DU-69-implement-ci-for-all-services" --targetBranch main
