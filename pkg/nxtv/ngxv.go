@@ -99,6 +99,7 @@ func getUpgradeTypeAndRelevantCommitFromDiff(diffCommits []gitutils.Commit) (Ver
 			}
 		}
 	}
+	relevantCommit = strings.Split(relevantCommit, "\n")[0]
 	return versionUpgradeType, relevantCommit
 }
 
